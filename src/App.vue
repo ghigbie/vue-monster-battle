@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Scoreboard />
+    <Scoreboard :props="{player1, player2}"/>
     <GameConsole />
   </div>
 
@@ -13,7 +13,21 @@ import GameConsole from '@/components/GameConsole'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Scoreboard,
+    GameConsole
+  },
+  data(){
+    return {
+      player1: {
+        name: 'You',
+        score: 0
+      },
+      player2: {
+        name: 'Monster',
+        score: 0
+      },
+      scoreOverall: 0
+    }
   }
 }
 </script>
