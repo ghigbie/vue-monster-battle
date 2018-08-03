@@ -1,4 +1,6 @@
-# vue-monster-battle
+# VueJS Monster Battle
+
+This is an app that simulates a monster battle using VueJS.
 
 ## Project setup
 ```
