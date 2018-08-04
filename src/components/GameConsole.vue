@@ -22,12 +22,11 @@ export default {
     props: ['newGame'],
     data(){
         return {
-
         }
     },
     methods: {
         startGame(){
-            //console.log('start game called');
+            console.log('start game called');
         }
     }
 }
