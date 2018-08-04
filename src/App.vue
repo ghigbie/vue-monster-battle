@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app container">
     <Scoreboard :player1="player1"  :player2="player2"/>
     <GameConsole />
   </div>

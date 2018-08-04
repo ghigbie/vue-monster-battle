@@ -1,7 +1,11 @@
 <template>
-  <div class="scoreboard">
-      <Player :name="player1.name" :score="player1.score"/>
-      <Player :name="player2.name" :score="player2.score"/>
+  <div class="scoreboard row flex">
+      <Player class="card player"
+              :name="player1.name" 
+              :score="player1.score"/>
+      <Player class="card player"
+              :name="player2.name" 
+              :score="player2.score"/>
   </div>
 </template>
 
@@ -23,5 +27,16 @@ export default {
 </script>
 
 <style scoped>
-
+  .scoreboard{
+    margin-top: 10vh;
+  }
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .player {
+    width: 45%;
+    text-align: center;
+  }
 </style>
