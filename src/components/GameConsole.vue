@@ -1,5 +1,5 @@
 <template>
-    <div class="game-console">
+    <div class="game-console card">
         <h1>Game Console</h1>
     </div>
 </template>
@@ -16,5 +16,8 @@ export default {
 </script>
 
 <style scoped>
-
+    .game-console{
+        text-align: center;
+        margin-top: 7vh;
+    }
 </style>

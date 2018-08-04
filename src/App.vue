@@ -1,8 +1,10 @@
 <template>
-  <div class="app container">
+  <div class="app">
     <Header :title="title" />
-    <Scoreboard :player1="player1"  :player2="player2"/>
-    <GameConsole />
+    <div class="container">
+      <Scoreboard :player1="player1"  :player2="player2"/>
+      <GameConsole />
+    </div>
   </div>
 
 </template>
