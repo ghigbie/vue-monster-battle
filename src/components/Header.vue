@@ -23,14 +23,14 @@ export default {
 
 <style scoped>
     .inner-container {
+        width: 100%;
+        text-align: center;
         display: flex;
-        flex-direction: row;
-        justify-content: center;
+        justify-content: center
     }
     .page-title{
         position: relative;
         padding: 2vh;
         color: #e8e8e8;
-        transform: translateX(-50%); 
     }
 </style>
