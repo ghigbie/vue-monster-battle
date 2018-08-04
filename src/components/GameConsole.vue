@@ -7,10 +7,10 @@
                         @click="startGame">Start</button>
             </template>
             <template v-else>
-                <button class="btn btn-warning">Attack</button>
-                <button class="btn btn-danger">Special Attack</button>
-                <button class="btn btn-primary">Heal</button>
-                <button class="btn btn-dark">Give Up</button>
+                <button class="btn btn-warning controls">Attack</button>
+                <button class="btn btn-danger controls">Special Attack</button>
+                <button class="btn btn-primary controls">Heal</button>
+                <button class="btn btn-dark controls">Give Up</button>
             </template>
         </div>
     </div>
@@ -37,5 +37,8 @@ export default {
         text-align: center;
         margin-top: 7vh;
         padding: 25px;
+    }
+    .controls{
+        margin: 3px;
     }
 </style>
