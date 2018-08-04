@@ -3,9 +3,9 @@
     <Header :title="title" />
     <div class="container">
       <Scoreboard :player1="player1"  
-                  :player2="player2"
-                  @startGame="startGame"/>
-      <GameConsole :newGame="newGame" />
+                  :player2="player2"/>
+      <GameConsole :newGame="newGame"
+                   @startGame="onStartGame" />
     </div>
     <Footer />
   </div>
@@ -42,7 +42,13 @@ export default {
     }
   },
   methods: {
+    onStartGame(){
+      console.log("upper component start game called");
+      this.newGame = !this.newGame;
+      this.player1.score = 100;
+      this.player2.score = 100;
 
+    }
   }
 }
 </script>
