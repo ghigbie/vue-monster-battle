@@ -1,6 +1,6 @@
 <template>
   <div class="app">
-    <Scoreboard :props="{player1, player2}"/>
+    <Scoreboard player1="player1"  player2="player2"/>
     <GameConsole />
   </div>
 

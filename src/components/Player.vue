@@ -1,13 +1,14 @@
 <template>
     <div class="player">
-        <h1>{{ title }}</h1>
+        <h1>{{ name }}</h1>
+        <h2>{{ score }}</h2>
     </div>
 </template>
 
 <script>
 export default {
     name: 'Player',
-    props:['title', 'score'],
+    props:['name', 'score'],
     data(){
         return {
 
