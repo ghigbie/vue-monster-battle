@@ -5,6 +5,7 @@
       <Scoreboard :player1="player1"  :player2="player2"/>
       <GameConsole :newGame="newGame" />
     </div>
+    <Footer />
   </div>
 
 </template>
@@ -13,13 +14,15 @@
 import Header from '@/components/Header'
 import Scoreboard from '@/components/Scoreboard'
 import GameConsole from '@/components/GameConsole'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'app',
   components: {
     Header,
     Scoreboard,
-    GameConsole
+    GameConsole,
+    Footer
   },
   data(){
     return {
