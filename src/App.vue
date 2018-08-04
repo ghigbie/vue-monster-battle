@@ -3,7 +3,7 @@
     <Header :title="title" />
     <div class="container">
       <Scoreboard :player1="player1"  :player2="player2"/>
-      <GameConsole />
+      <GameConsole :newGame="newGame" />
     </div>
   </div>
 
@@ -32,7 +32,8 @@ export default {
         name: 'Monster',
         score: 0
       },
-      scoreOverall: 0
+      scoreOverall: 0,
+      newGame: true,
     }
   }
 }
