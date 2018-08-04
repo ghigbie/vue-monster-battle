@@ -2,7 +2,9 @@
   <div class="app">
     <Header :title="title" />
     <div class="container">
-      <Scoreboard :player1="player1"  :player2="player2"/>
+      <Scoreboard :player1="player1"  
+                  :player2="player2"
+                  @startGame="startGame"/>
       <GameConsole :newGame="newGame" />
     </div>
     <Footer />
@@ -38,6 +40,9 @@ export default {
       scoreOverall: 0,
       newGame: true,
     }
+  },
+  methods: {
+
   }
 }
 </script>

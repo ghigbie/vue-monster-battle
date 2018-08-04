@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         startGame(){
-            console.log('start game called');
+            this.$emit('startGame');
         }
     }
 }
