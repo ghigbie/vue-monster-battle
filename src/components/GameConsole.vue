@@ -1,4 +1,5 @@
 <template>
+    <div>
     <div class="game-console card">
         <h1>Game Console</h1>
         <div class="button-holder">
@@ -13,7 +14,8 @@
                 <button class="btn btn-dark controls">Give Up</button>
             </template>
         </div>
-        <DataConsole />
+    </div>
+        <DataConsole class="data-console"/>
     </div>
 </template>
 
@@ -46,5 +48,10 @@ export default {
     }
     .controls{
         margin: 3px;
+    }
+    .data-console{
+        margin: 2vh 0;
+        text-align: center;
+        padding: 5px;
     }
 </style>

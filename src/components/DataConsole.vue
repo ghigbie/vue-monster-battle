@@ -1,6 +1,6 @@
 <template>
-    <div class="data-console">
-        Data Console
+    <div class="data-console card">
+        <h2>Data Console</h2>
     </div>
 </template>
 
@@ -17,6 +17,7 @@ export default {
 </script>
 
 <style scoped>
+
 
 </style>
 
