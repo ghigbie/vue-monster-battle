@@ -46,15 +46,16 @@ export default {
     onStartGame(){
       console.log("upper component start game called");
       this.newGame = !this.newGame;
-      this.player1.score = lifeScore;
-      this.player2.score = lifeScore;
+      this.player1.score = this.lifeScore;
+      this.player2.score = this.lifeScore;
     },
     checkScore(){
-      this.player1.score <= lifeScore && onEndGame;
-      this.player2.score <= lifeScore && onEndGame;
+      this.player1.score <= this.lifeScore && this.onEndGame();
+      this.player2.score <= this.lifeScore && this.onEndGame();
     },
     onEndGame(){
       this.newGame = !this.newGame;
+      console.log('On end Game called');
     },
   }
 }
