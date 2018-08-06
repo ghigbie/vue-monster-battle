@@ -49,7 +49,7 @@ export default {
   methods: {
     onStartGame(){
       console.log("upper component start game called");
-      this.newGame = !this.newGame;
+      this.newGame = true;
       this.player1.health = this.gameHealth;
       this.player2.health = this.gameHealth;
     },
@@ -96,7 +96,13 @@ export default {
       this.player2Attacks();
     },
     onHeal(){
-
+      if(this.player1.health < this.gameHealth){
+        this.player1.health += Math.floor(Math.random() * 10) +1;
+      }
+        if(this.player1.health > this.gameHealth){
+          this.player1.health = this.gameHealth;
+      }
+      this.monsterAttacks();
     },
     onGiveUp(){
 
