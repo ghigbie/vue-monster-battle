@@ -61,16 +61,17 @@ export default {
           this.player2.health = 0;
           this.onEndGame
         }
-        return;
-      }
-      if(this.player1.health <= 0){
+        return true;
+      }else if(this.player1.health <= 0){
         if(confirm('Monster won! New Game?')){
           this.onStartGame();
         }else{
           this.player1.health = 0;
           this.onEndGame();
         }
+        return true;
       }
+      return false;
     },
     onEndGame(){
       this.newGame = !this.newGame;
@@ -82,18 +83,27 @@ export default {
     },
     onAttack(){
       this.player2.health -= this.calculateDamange(3, 10)
-      this.checkWin();
-      this.player1.health -= this.calculateDamange(5, 12);
-      this.checkWin();
+      if(this.checkWin()){
+        return;
+      }
+      this.player2Attacks();
     },
     onSpecialAttack(){
-
+      this.player2.health -= this.calculateDamange(10, 20)
+      if(this.checkWin()){
+        return;
+      }
+      this.player2Attacks();
     },
     onHeal(){
 
     },
     onGiveUp(){
 
+    },
+    player2Attacks(){
+      this.player1.health -= this.calculateDamange(5, 12);
+      this.checkWin();
     }
   }
 }
