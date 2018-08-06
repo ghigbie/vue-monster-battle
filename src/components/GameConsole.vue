@@ -20,6 +20,7 @@
         </div>
     </div>
         <DataConsole class="data-console"
+                     v-if="turns.length"
                      :turns="turns"/>
     </div>
 </template>

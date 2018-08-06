@@ -1,7 +1,6 @@
 <template>
     <div class="player center-text">
         <h1>{{ name }}</h1>
-        <h2>{{ health }}</h2>
         <div class="healthbar-outer">
             <div class="healthbar"
                 :style="{width: health + '%'}">

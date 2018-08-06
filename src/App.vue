@@ -74,6 +74,7 @@ export default {
       return false;
     },
     onEndGame(){
+      this.turns = [];
       this.newGame = !this.newGame;
     },
     //game control methods
@@ -85,7 +86,7 @@ export default {
       this.player2.health -= damage;
       this.turns.unshift({
         isPlayer1: true,
-        text: `You dealt ${damage} to ${this.player2.name}`
+        text: `You dealt ${damage} points of damange to ${this.player2.name}`
       })
       if(this.checkWin()){
         return;
@@ -97,7 +98,7 @@ export default {
       this.player2.health -= damage;
       this.turns.unshift({
         isPlayer1: true,
-        text: `${this.player2.name} dealt ${damage} to you.`
+        text: `${this.player2.name} dealt ${damage} points of damange to you.`
       });
       if(this.checkWin()){
         return;
@@ -128,7 +129,7 @@ export default {
       this.player1.health -= damage;
       this.turns.unshift({
         isPlayer1: false,
-        text: `${this.player2.name} dealt ${damage} to you.`
+        text: `${this.player2.name} dealt ${damage} points of damange to you.`
       });
       this.checkWin();
     }
