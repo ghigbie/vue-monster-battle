@@ -38,7 +38,7 @@ export default {
         score: 0
       },
       scoreOverall: 0,
-      newGame: true,
+      newGame: false,
       lifeScore: 100
     }
   },

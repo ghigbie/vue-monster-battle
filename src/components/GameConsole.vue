@@ -2,7 +2,7 @@
     <div class="game-console card">
         <h1>Game Console</h1>
         <div class="button-holder">
-            <template v-if="newGame">
+            <template v-if="!newGame">
                 <button class="btn btn-success"
                         @click="startGame">Start</button>
             </template>
