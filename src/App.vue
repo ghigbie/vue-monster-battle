@@ -53,25 +53,32 @@ export default {
       this.player1.health = this.gameHealth;
       this.player2.health = this.gameHealth;
     },
-    checkScore(){
-      this.player1.health <= this.gameHealth && this.onEndGame();
-      this.player2.health <= this.gameHealth && this.onEndGame();
+    checkWin(){
+      if(this.player2.health <= 0){
+        alert('You won!');
+        this.onEndGame();
+        this.player2.health = 0;
+        return;
+      }
+      if(this.player1.health <= 0){
+        alert('Monster won!');
+        this.onEndGame();
+        this.player1.health = 0;
+      }
     },
     onEndGame(){
       this.newGame = !this.newGame;
       console.log('On end Game called');
     },
     //game control methods
+    calculateDamange(min, max){
+      return Math.max(Math.floor(Math.random() * max) +1, min);
+    },
     onAttack(){
-      let max = 10;
-      let min = 3;
-      let damage = Math.max(Math.floor(Math.random() * max) +1, min);
-      this.player1.health -= damage;
-
-      max = 12;
-      min = 5;
-      damage = Math.max(Math.floor(Math.random() * max) + 1, min);
-      this.player2.health -= damage;
+      this.player2.health -= this.calculateDamange(3, 10)
+      this.checkWin();
+      this.player1.health -= this.calculateDamange(5, 12);
+      this.checkWin();
     },
     onSpecialAttack(){
 
