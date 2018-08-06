@@ -5,13 +5,13 @@
       <Scoreboard :player1="player1"  
                   :player2="player2"/>
       <GameConsole :newGame="newGame"
+                   :turns="turns"
                    @startGame="onStartGame" 
                    @attack="onAttack"
                    @specialAttack="onSpecialAttack"
                    @heal="onHeal"
                    @retreat="onRetreat"/>
     </div>
-    <Footer />
   </div>
 
 </template>
@@ -106,7 +106,12 @@ export default {
     },
     onHeal(){
       if(this.player1.health < this.gameHealth){
-        this.player1.health += Math.floor(Math.random() * 10) +1;
+        let increase = Math.floor(Math.random() * 10) +1;
+        this.player1.health += increase
+        this.turns.unshift({
+          isPlayer1: true,
+          text: `You healed by ${increase} points.`
+      });
       }
         if(this.player1.health > this.gameHealth){
           this.player1.health = this.gameHealth;

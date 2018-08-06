@@ -19,7 +19,8 @@
             </section>
         </div>
     </div>
-        <DataConsole class="data-console"/>
+        <DataConsole class="data-console"
+                     :turns="turns"/>
     </div>
 </template>
 
@@ -28,7 +29,7 @@ import DataConsole from './DataConsole';
 
 export default {
     name: 'GameConsole',
-    props: ['newGame'],
+    props: ['newGame', 'turns'],
     components: {
         DataConsole
     },

@@ -1,6 +1,10 @@
 <template>
     <div class="data-console card">
-        <h2>Data Console</h2>
+        <ul>
+            <li v-for="(turn, index) in turns" key="index">
+                {{ turn.text }}
+            </li>
+        </ul>
     </div>
 </template>
 
@@ -8,6 +12,7 @@
 <script>
 export default {
     name: 'DataConsole',
+    props: ['turns'],
     data(){
         return {
 
@@ -17,7 +22,10 @@ export default {
 </script>
 
 <style scoped>
-
+    li{
+        list-style-type: none;
+        font-weight: 800;
+    }
 
 </style>
 
