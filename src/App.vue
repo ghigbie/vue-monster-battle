@@ -62,7 +62,26 @@ export default {
       console.log('On end Game called');
     },
     //game control methods
-    onAttack(){}
+    onAttack(){
+      let max = 10;
+      let min = 3;
+      let damage = Math.max(Math.floor(Math.random() * max) +1, min);
+      this.player1.health -= damage;
+
+      max = 12;
+      min = 5;
+      damage = Math.max(Math.floor(Math.random() * max) + 1, min);
+      this.player2.health -= damage;
+    },
+    onSpecialAttack(){
+
+    },
+    onHeal(){
+
+    },
+    onGiveUp(){
+
+    }
   }
 }
 </script>
