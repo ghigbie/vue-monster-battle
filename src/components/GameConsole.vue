@@ -15,7 +15,7 @@
                 <button class="btn btn-primary controls"
                         @click="heal">Heal</button>
                 <button class="btn btn-dark controls"
-                        @click="giveUp">Give Up</button>
+                        @click="retreat">Retreat</button>
             </section>
         </div>
     </div>
@@ -49,8 +49,8 @@ export default {
         heal(){
             this.$emit('heal');
         },
-        giveUp(){
-            this.$emit('giveUp');
+        retreat(){
+            this.$emit('retreat');
         }
     }
 }
