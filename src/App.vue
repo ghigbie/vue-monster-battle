@@ -98,7 +98,7 @@ export default {
       this.player2.health -= damage;
       this.turns.unshift({
         isPlayer1: true,
-        text: `${this.player2.name} dealt ${damage} points of damange to you.`
+        text: `Excellent move! ${this.player2.name} dealt ${damage} points of damange to ${this.player1.name.toLowerCase}.`
       });
       if(this.checkWin()){
         return;
@@ -129,7 +129,7 @@ export default {
       this.player1.health -= damage;
       this.turns.unshift({
         isPlayer1: false,
-        text: `${this.player2.name} dealt ${damage} points of damange to you.`
+        text: `${this.player2.name} dealt ${damage} points of damange to ${this.player1.name.toLowerCase}.`
       });
       this.checkWin();
     }
