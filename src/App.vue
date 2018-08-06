@@ -59,7 +59,7 @@ export default {
           this.onStartGame()
         }else{
           this.player2.health = 0;
-          this.onEndGame
+          this.onEndGame();
         }
         return true;
       }else if(this.player1.health <= 0){
@@ -98,7 +98,7 @@ export default {
       this.player2.health -= damage;
       this.turns.unshift({
         isPlayer1: true,
-        text: `Excellent move! ${this.player2.name} dealt ${damage} points of damange to ${this.player1.name.toLowerCase}.`
+        text: `Excellent move! ${this.player1.name} dealt ${damage} points of damange to ${this.player2.name}.`
       });
       if(this.checkWin()){
         return;
@@ -129,7 +129,7 @@ export default {
       this.player1.health -= damage;
       this.turns.unshift({
         isPlayer1: false,
-        text: `${this.player2.name} dealt ${damage} points of damange to ${this.player1.name.toLowerCase}.`
+        text: `${this.player2.name} dealt ${damage} points of damange to ${this.player1.name.toLowerCase()}.`
       });
       this.checkWin();
     }
