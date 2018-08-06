@@ -55,15 +55,21 @@ export default {
     },
     checkWin(){
       if(this.player2.health <= 0){
-        alert('You won!');
-        this.onEndGame();
-        this.player2.health = 0;
+        if(confirm('You won! New Game?')){
+          this.onStartGame()
+        }else{
+          this.player2.health = 0;
+          this.onEndGame
+        }
         return;
       }
       if(this.player1.health <= 0){
-        alert('Monster won!');
-        this.onEndGame();
-        this.player1.health = 0;
+        if(confirm('Monster won! New Game?')){
+          this.onStartGame();
+        }else{
+          this.player1.health = 0;
+          this.onEndGame();
+        }
       }
     },
     onEndGame(){
