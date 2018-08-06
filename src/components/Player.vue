@@ -1,10 +1,10 @@
 <template>
     <div class="player center-text">
         <h1>{{ name }}</h1>
-        <h2>{{ score }}</h2>
+        <h2>{{ health }}</h2>
         <div class="healthbar-outer">
             <div class="healthbar"
-                :style="{width: score + '%'}">
+                :style="{width: health + '%'}">
                 <h3 class="inner-text">{{ score }}</h3>
             </div>
         </div>
@@ -14,7 +14,7 @@
 <script>
 export default {
     name: 'Player',
-    props:['name', 'score'],
+    props:['name', 'health'],
     data(){
         return {
 

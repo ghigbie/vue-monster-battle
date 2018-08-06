@@ -2,10 +2,10 @@
   <div class="scoreboard row flex">
       <Player class="card player"
               :name="player1.name" 
-              :score="player1.score"/>
+              :health="player1.health"/>
       <Player class="card player"
               :name="player2.name" 
-              :score="player2.score"/>
+              :health="player2.health"/>
   </div>
 </template>
 
