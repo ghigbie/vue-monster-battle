@@ -9,7 +9,7 @@
                    @attack="onAttack"
                    @specialAttack="onSpecialAttack"
                    @heal="onHeal"
-                   @giveUp="onGiveUp"/>
+                   @retreat="onRetreat"/>
     </div>
     <Footer />
   </div>
@@ -43,12 +43,12 @@ export default {
       },
       scoreOverall: 0,
       newGame: false,
-      gameHealth: 100
+      gameHealth: 100,
+      turns: []
     }
   },
   methods: {
     onStartGame(){
-      console.log("upper component start game called");
       this.newGame = true;
       this.player1.health = this.gameHealth;
       this.player2.health = this.gameHealth;
@@ -81,14 +81,24 @@ export default {
       return Math.max(Math.floor(Math.random() * max) +1, min);
     },
     onAttack(){
-      this.player2.health -= this.calculateDamange(3, 10)
+      let damage = this.calculateDamange(3, 10)
+      this.player2.health -= damage;
+      this.turns.unshift({
+        isPlayer1: true,
+        text: `You dealt ${damage} to ${this.player2.name}`
+      })
       if(this.checkWin()){
         return;
       }
       this.player2Attacks();
     },
     onSpecialAttack(){
-      this.player2.health -= this.calculateDamange(10, 20)
+      let damage = this.calculateDamange(10, 20);
+      this.player2.health -= damage;
+      this.turns.unshift({
+        isPlayer1: true,
+        text: `${this.player2.name} dealt ${damage} to you.`
+      });
       if(this.checkWin()){
         return;
       }
@@ -103,13 +113,18 @@ export default {
       }
       this.monsterAttacks();
     },
-    onGiveUp(){
+    onRetreat(){
       confirm('Are you sure you want to run away?');
       alert('You lost!');
       this.onEndGame();
     },
     player2Attacks(){
-      this.player1.health -= this.calculateDamange(5, 12);
+      let damage = this.calculateDamange(5, 12);
+      this.player1.health -= damage;
+      this.turns.unshift({
+        isPlayer1: false,
+        text: `${this.player2.name} dealt ${damage} to you.`
+      });
       this.checkWin();
     }
   }
