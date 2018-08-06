@@ -63,6 +63,8 @@ export default {
         text-align: center;
         margin-top: 7vh;
         padding: 25px;
+        color: #e1e1e1;
+        background-color: #212529;
     }
     .controls{
         margin: 3px;
