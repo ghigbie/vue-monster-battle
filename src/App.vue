@@ -50,6 +50,7 @@ export default {
   methods: {
     onStartGame(){
       this.newGame = true;
+      this.turns = [];
       this.player1.health = this.gameHealth;
       this.player2.health = this.gameHealth;
     },
@@ -112,12 +113,12 @@ export default {
         this.turns.unshift({
           isPlayer1: true,
           text: `You healed by ${increase} points.`
-      });
+        });
       }
-        if(this.player1.health > this.gameHealth){
-          this.player1.health = this.gameHealth;
+      if(this.player1.health > this.gameHealth){
+        this.player1.health = this.gameHealth;
       }
-      this.monsterAttacks();
+      this.player2Attacks();
     },
     onRetreat(){
       confirm('Are you sure you want to run away?');
