@@ -1,6 +1,6 @@
 # VueJS Monster Battle
 
-This is an app that simulates a monster battle using VueJS.
+This is an app that simulates a monster battle game using VueJS and Bootstrap 4.
 
 ## Project setup
 ```

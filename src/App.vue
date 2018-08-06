@@ -31,27 +31,27 @@ export default {
       title: 'Monster Battle',
       player1: {
         name: 'You',
-        score: 0
+        health: 0
       },
       player2: {
         name: 'Monster',
-        score: 0
+        health: 0
       },
       scoreOverall: 0,
       newGame: false,
-      lifeScore: 100
+      gameHealth: 100
     }
   },
   methods: {
     onStartGame(){
       console.log("upper component start game called");
       this.newGame = !this.newGame;
-      this.player1.score = this.lifeScore;
-      this.player2.score = this.lifeScore;
+      this.player1.health = this.gameHealth;
+      this.player2.health = this.gameHelath;
     },
     checkScore(){
-      this.player1.score <= this.lifeScore && this.onEndGame();
-      this.player2.score <= this.lifeScore && this.onEndGame();
+      this.player1.health <= this.gameHealth && this.onEndGame();
+      this.player2.health <= this.gameHealth && this.onEndGame();
     },
     onEndGame(){
       this.newGame = !this.newGame;
