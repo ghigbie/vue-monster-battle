@@ -36,6 +36,7 @@ export default {
         height: 5vh;
         width: 100%;
         text-align: center;
+        transition: width 500ms;
     }
     .inner-text{
         position: absolute;
