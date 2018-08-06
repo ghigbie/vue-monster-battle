@@ -75,7 +75,6 @@ export default {
     },
     onEndGame(){
       this.newGame = !this.newGame;
-      console.log('On end Game called');
     },
     //game control methods
     calculateDamange(min, max){
@@ -105,7 +104,9 @@ export default {
       this.monsterAttacks();
     },
     onGiveUp(){
-
+      confirm('Are you sure you want to run away?');
+      alert('You lost!');
+      this.onEndGame();
     },
     player2Attacks(){
       this.player1.health -= this.calculateDamange(5, 12);
