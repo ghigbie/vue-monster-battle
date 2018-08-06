@@ -8,10 +8,14 @@
                         @click="startGame">Start</button>
             </section>
             <section v-else>
-                <button class="btn btn-warning controls">Attack</button>
-                <button class="btn btn-danger controls">Special Attack</button>
-                <button class="btn btn-primary controls">Heal</button>
-                <button class="btn btn-dark controls">Give Up</button>
+                <button class="btn btn-warning controls"
+                        @click="attack">Attack</button>
+                <button class="btn btn-danger controls"
+                        @click="specialAttack">Special Attack</button>
+                <button class="btn btn-primary controls"
+                        @click="heal">Heal</button>
+                <button class="btn btn-dark controls"
+                        @click="giveUp">Give Up</button>
             </section>
         </div>
     </div>
@@ -35,6 +39,18 @@ export default {
     methods: {
         startGame(){
             this.$emit('startGame');
+        },
+        attack(){
+            this.$emit('attack');
+        },
+        specialAttack(){
+            this.$emit('specialAttack');
+        },
+        heal(){
+            this.$emit('heal');
+        },
+        giveUp(){
+            this.$emit('giveUp');
         }
     }
 }

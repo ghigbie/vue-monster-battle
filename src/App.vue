@@ -5,7 +5,11 @@
       <Scoreboard :player1="player1"  
                   :player2="player2"/>
       <GameConsole :newGame="newGame"
-                   @startGame="onStartGame" />
+                   @startGame="onStartGame" 
+                   @attack="onAttack"
+                   @specialAttack="onSpecialAttack"
+                   @heal="onHeal"
+                   @giveUp="onGiveUp"/>
     </div>
     <Footer />
   </div>
@@ -47,7 +51,7 @@ export default {
       console.log("upper component start game called");
       this.newGame = !this.newGame;
       this.player1.health = this.gameHealth;
-      this.player2.health = this.gameHelath;
+      this.player2.health = this.gameHealth;
     },
     checkScore(){
       this.player1.health <= this.gameHealth && this.onEndGame();
@@ -57,6 +61,8 @@ export default {
       this.newGame = !this.newGame;
       console.log('On end Game called');
     },
+    //game control methods
+    onAttack(){}
   }
 }
 </script>

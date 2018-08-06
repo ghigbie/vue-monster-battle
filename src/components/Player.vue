@@ -5,7 +5,7 @@
         <div class="healthbar-outer">
             <div class="healthbar"
                 :style="{width: health + '%'}">
-                <h3 class="inner-text">{{ score }}</h3>
+                <h3 class="inner-text">{{ health }}</h3>
             </div>
         </div>
     </div>
