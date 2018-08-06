@@ -13,13 +13,19 @@
                 <button class="btn btn-dark controls">Give Up</button>
             </template>
         </div>
+        <DataConsole />
     </div>
 </template>
 
 <script>
+import DataConsole from './DataConsole';
+
 export default {
     name: 'GameConsole',
     props: ['newGame'],
+    components: {
+        DataConsole
+    },
     data(){
         return {
         }
