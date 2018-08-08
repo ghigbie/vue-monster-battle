@@ -2,7 +2,7 @@
     <div class="data-console card">
         <ul>
             <li v-for="(turn, index) in turns" 
-                key="index"
+                :key="index"
                 :class="{ 'player1-turn': turn.isPlayer1 , 'player2-turn': !turn.isPlayer1 }">
                 {{ turn.text }}
             </li>
