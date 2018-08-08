@@ -20,7 +20,6 @@
 import Header from '@/components/Header'
 import Scoreboard from '@/components/Scoreboard'
 import GameConsole from '@/components/GameConsole'
-import Footer from '@/components/Footer'
 
 export default {
   name: 'app',
@@ -28,7 +27,6 @@ export default {
     Header,
     Scoreboard,
     GameConsole,
-    Footer
   },
   data(){
     return {
